@@ -32,7 +32,6 @@ h1 span{color:var(--accent)}
 #stage{position:relative;border-radius:16px;overflow:hidden;border:5px solid #2f6f9c;
   box-shadow:0 9px 0 #9cc9e4,0 18px 30px rgba(30,60,90,.18);background:#cdeefb;transition:border-color .4s,box-shadow .4s}
 #c,#ui{display:block;width:100%;height:auto}
-#c{image-rendering:pixelated;image-rendering:crisp-edges}
 #ui{position:absolute;inset:0;pointer-events:none}
 #overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   background:rgba(25,30,50,.42);padding:10px}
@@ -132,7 +131,8 @@ h1 span{color:var(--accent)}
 
 <script>
 // ================= 기본 설정 =================
-const W=15,H=13,T=48,HB=0.38,WIN=3,MAXP=8,ROUND_MAX=150,SUDDEN=60,INF=1e9,RS=0.5; // RS: 픽셀 해상도 배율
+const W=15,H=13,T=48,HB=0.38,WIN=3,MAXP=8,ROUND_MAX=150,SUDDEN=60,INF=1e9;
+const RS=Math.min(2,window.devicePixelRatio||1); // 화면 해상도 그대로 선명하게
 const DIRS={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
 const DLIST=[[1,0],[-1,0],[0,1],[0,-1]];
 const SKIN='#ffdcc0',SKIN2='#f2b994';
